@@ -1,0 +1,185 @@
+:root{
+    --background1: #5ba5ff;
+    --background2: #1d8db6;
+    --background3: #403F44;
+    --background4: #1E1B32;
+    --whiteColor1: #F8FBFE;
+    --addColor1: #bdbdbd;
+    --addColor2: #6a6a6a;
+    --addColor3: #202020;
+}
+*, :root{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(to bottom, var(--background1), var(--background2));
+    min-height: 100vh;
+    color: var(--whiteColor1);
+    font-family: "Poppins", sans-serif;
+}
+.b2{
+    background-image: linear-gradient(to bottom, var(--background3), var(--background4)) !important;
+}
+.btnStyle{
+    background-color: var(--whiteColor1);
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.bi.bi-circle-fill{
+    margin: 4px;
+    color: var(--background2);
+    font-size: 23px;
+}
+
+.animation{
+    animation: btn 0.5s linear;
+    animation-fill-mode: forwards;
+}
+.animationV{
+    animation: btnVoltar 0.5s linear;
+    animation-fill-mode: forwards;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.tasks1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.addTask input{
+    background-color: var(--whiteColor1);
+    padding: 20px;
+    width: 500px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    color: var(--addColor2);
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.addTask input::placeholder{ /* edita o placeholder */
+    color: var(--addColor1);
+    font-family: "Poppins", sans-serif;
+}
+
+.addTaskBtn{
+    background-color: var(--whiteColor1);
+    border: none;
+    font-size: 3rem;
+    border-radius: 12px;
+    color: var(--addColor1);
+    padding: 4px;
+}
+
+.addTaskBtn:hover, .bi.bi-eraser:hover{
+    color: var(--addColor3);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.bi.bi-eraser:hover{
+    transform: scale(1.3) !important;
+}
+
+#date{
+   margin-left: 3rem;
+   font-size: 1rem;
+}
+
+.tasks2{
+    min-width: 600px;
+    min-height: 300px;
+    padding: 20px;
+    background-color: var(--whiteColor1);
+    margin: 5% 25%;
+    border-radius: 10px;
+}
+
+.newTaskElement{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--addColor3);
+    border: 1px solid var(--addColor1);
+    border-radius: 10px;
+    margin: 10px;
+}
+.decorationFont{
+    text-decoration: line-through;
+}
+
+@keyframes btn{
+    from{
+        color: var(--background2);
+    }
+    to{
+        color: var(--background3);
+        transform: translateX(200%);
+    }
+}
+
+@keyframes btnVoltar{
+    from{
+        color: var(--background3);
+        transform: translateX(200%);
+    }
+    to{
+        color: var(--background2);
+        transform: translateX(0);
+    }
+}
+
+
+/* Existing CSS styles */
+
+/* Add media query for smaller screens */
+@media (max-width: 1000px) {
+    body {
+        margin: 0;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tasks1 {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #date{
+        display: none;
+    }
+
+    .addTask input {
+        width: 100%;
+    }
+
+    .tasks2 {
+        min-width: auto;
+        margin: 10% 5%;
+    }
+
+    .newTaskElement{
+        overflow: scroll;
+    }
+    .bi.bi-eraser{
+        padding-left: 10px;
+    }
+}
