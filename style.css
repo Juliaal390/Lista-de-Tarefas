@@ -142,10 +142,6 @@ header{
     }
 }
 
-
-/* Existing CSS styles */
-
-/* Add media query for smaller screens */
 @media (max-width: 1000px) {
     body {
         margin: 0;
