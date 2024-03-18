@@ -30,12 +30,13 @@ date.textContent = dateFormato;
 /* adicionar tarefa */
 const btnAddTask = document.querySelector('.addTaskBtn'); /* botão */
 const bloconotas = document.querySelector('.tasks2'); /* bloco onde as notas aparecerão */
-btnAddTask.addEventListener('click', ()=>{
+ const taskSaved = btnAddTask.addEventListener('click', ()=>{
     let getTask = document.getElementById('inputTask').value;
 
     if(getTask.trim()!==''){
     let newTask = document.createElement('div');
     newTask.setAttribute('class', 'newTaskElement');
+    newTask.style.cursor='pointer';
     newTask.textContent=getTask;
 
     let newIcon = document.createElement('i');
@@ -55,7 +56,9 @@ btnAddTask.addEventListener('click', ()=>{
     newTask.addEventListener('click',(e)=>{
         e.target.classList.toggle('decorationFont');
     });
+    
 }else{
     alert('Insira algum texto');
 }
 });
+

@@ -29,6 +29,7 @@ body{
     height: 30px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .bi.bi-circle-fill{
     margin: 4px;
@@ -173,7 +174,7 @@ header{
     }
 
     .newTaskElement{
-        overflow: scroll;
+        overflow-x: scroll;
     }
     .bi.bi-eraser{
         padding-left: 10px;
